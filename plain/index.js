@@ -15,11 +15,16 @@ function closeForm() {
 }
 
 function processForm() {
-    console.log("processing");
     const myForm = document.getElementById('myForm');
-    console.log(document.getElementById('myForm-name').value);
-    console.log(document.getElementById('myForm-age').value);
+    name = document.getElementById('myForm-name').value
+    age = document.getElementById('myForm-age').value
 
     // now do something with those shitty vars.
-    closeForm();
+    // FIXME what the hell why does inverted logic work
+    if(age<18){
+        closeForm();
+    }
+    else {
+        document.getElementById('myForm').innerHTML = '';
+    }
 }
