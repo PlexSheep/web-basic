@@ -83,6 +83,10 @@ nav a {
     height: 100%;
 }
 
+#not-old-enough {
+    display: none;
+}
+
 /* Add styles to the form container */
 .form-container {
     padding: 10px;

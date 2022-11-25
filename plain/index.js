@@ -22,7 +22,9 @@ function processForm() {
     // now do something with those shitty vars.
     // FIXME what the hell why does inverted logic work
     if(age<18){
-        document.getElementById('myForm').innerHTML = 'not old enough!';
+        document.getElementById("not-old-enough").style.display = "block";
+        closeForm();
+        openForm();
     }
     else {
         closeForm();
