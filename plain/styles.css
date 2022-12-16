@@ -174,3 +174,14 @@ button {
     margin: 40px;
     padding: 8px;
 }
+
+input {
+    margin: 40px;
+    padding: 8px;
+}
+
+textarea {
+    padding: 20px;
+    margin: 20px;
+    min-height: 100px;
+}

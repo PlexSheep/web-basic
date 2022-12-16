@@ -22,28 +22,38 @@ define("price", 14);
                 <h3>Product</h3>
                 <label for="product">What product do you want to buy?</label><br>
                 <select name="product" id="product">
-                    <option>AAAAAAAAAAA</option>
-                    <option>cat</option>
-                    <option>sheep</option>
-                    <option>Twitter</option>
-                    <option>Hoovergadse</option>
+                    <option <?php if ($_POST["product"] == "AAAAAAAAAAA") {
+                        echo "selected";}?>>AAAAAAAAAAA</option>
+                    <option <?php if ($_POST["product"] == "cat") {
+                        echo "selected";}?>>cat</option>
+                    <option <?php if ($_POST["product"] == "twitter") {
+                        echo "selected";}?>>twitter</option>
+                    <option <?php if ($_POST["product"] == "success") {
+                        echo "selected";}?>>success</option>
+                    <option <?php if ($_POST["product"] == "Apple") {
+                        echo "selected";}?>>apple</option>
+                    <option <?php if ($_POST["product"] == "orange") {
+                        echo "selected";}?>>orange</option>
                 </select>
                 <label for="productQuantity">How many of it?</label><br>
-                <input name="productQuantity" type="number" value=1>
+                <input name="productQuantity" type="number" value=<?php if ($_POST) {
+                    echo $_POST["productQuantity"];} else
+                    echo "1";?>>
             </div>
             <div class="grid-item-2">
                 <h3>Where do you want it to be delivered?</h3>
-                <textarea name="address" form="BuyForm">Enter text here...</textarea>
+                <textarea name="address" form="BuyForm"><?php if ($_POST)
+                    echo $_POST["address"];
+                else
+                    echo "Musterstraße 1\n12345 Musterdorf\nGermany";?></textarea>
                 <input type="hidden" name="price" value=<?php echo price; ?>>
-                <input type="submit" value="Check">
             </div>
             <div class="grid-item-2">
-                <input type="button" name="calculate" Value="calculate price" onClick="readText(this.form)">
                 <input type="submit" value="Check">
             </div>
         </form>
         <?php if ($_POST) { ?>
-        <div class="grid-item-2">
+        <div class="grid-item-2" id="checkout">
             <h3>Is this correct?</h3>
             <table>
                 <tr>
