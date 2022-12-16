@@ -56,7 +56,7 @@ nav a {
     color: white;
 }
 
-{box-sizing: border-box;}
+
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
@@ -151,5 +151,26 @@ nav a {
 #BuyForm {
     color: white;
 }
-#BuyForm {
+
+table {
+    padding: 8px;
+    border: solid 2px white;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    border: solid 2px white;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 4px;
+    border: dashed 1px white;
+    border-collapse: collapse;
+}
+
+button {
+    margin: 40px;
+    padding: 8px;
 }

@@ -1,19 +1,20 @@
 <?php
-define("price", 12);
-echo
-'
+define("price", 14);
+?>
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>most basic webapp</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <script src="index.js"></script>
-        <div class="grid-container">
-            <form id="BuyForm">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>most basic webapp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <script src="index.js"></script>
+    <div class="grid-container">
+        <form id="BuyForm" action="" method="post">
             <div class="grid-item-1">
                 <h1>Buy great things now!</h1>
             </div>
@@ -33,27 +34,43 @@ echo
             <div class="grid-item-2">
                 <h3>Where do you want it to be delivered?</h3>
                 <textarea name="address" form="BuyForm">Enter text here...</textarea>
+                <input type="hidden" name="price" value=<?php echo price; ?>>
+                <input type="submit" value="Check">
             </div>
-            <input type="hidden" name="price" value=';
-echo price;
-echo '>
-            <input type="button" name="calculate" Value="calculate price" onClick="readText(this.form)">
-            </form>
             <div class="grid-item-2">
-                <h3>Pricing</h3>
-                <p id="finalPrice"></p>
-                <script>
-                    function readText (form) {
-                        let finalPrice = document.getElementById("finalPrice");
-                        price = parseInt(form.price.value) * parseInt(form.productQuantity.value);
-                        console.log(price);
-                        finalPrice.innerHTML = price + " €";
-                    }
-                </script>
+                <input type="button" name="calculate" Value="calculate price" onClick="readText(this.form)">
+                <input type="submit" value="Check">
             </div>
-            </form>
+        </form>
+        <?php if ($_POST) { ?>
+        <div class="grid-item-2">
+            <h3>Is this correct?</h3>
+            <table>
+                <tr>
+                    <th>property</th>
+                    <th>value</th>
+                </tr>
+                <tr>
+                    <td>Product</td>
+                    <td><?php echo $_POST["product"];?></td>
+                </tr>
+                <tr>
+                    <td>Product quantity</td>
+                    <td><?php echo $_POST["productQuantity"] . " piece(s)";?></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td><?php echo $_POST["price"] . '€';?></td>
+                </tr>
+                <tr>
+                    <td>Delivery Address</td>
+                    <td><?php echo $_POST["address"];?></td>
+                </tr>
+            </table>
+            <button>Confirm order</button>
         </div>
-    </body>
+        <?php } ?>
+    </div>
+</body>
+
 </html>
-';
-?>
