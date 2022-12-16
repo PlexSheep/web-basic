@@ -9,7 +9,7 @@
     </head>
     <body style="background-image: url('heftighorn.jpeg'); background-repeat: no-repeat; background-size: cover;">
         <nav>
-            <a class="white" href="index.html">back to main</a>
+            <a class="white" href="index.php">back to main</a>
         </nav>
         <div class="ccontainer">
             <h1 class="cchild" >Warum Gelbe Einhörner so selten sind.</hr>

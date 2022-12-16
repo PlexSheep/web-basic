@@ -1,3 +1,7 @@
+<?php
+define("price", 12);
+echo
+'
 <!doctype html>
 <html lang="en">
     <head>
@@ -30,7 +34,9 @@
                 <h3>Where do you want it to be delivered?</h3>
                 <textarea name="address" form="BuyForm">Enter text here...</textarea>
             </div>
-            <input type="hidden" name="price" value=10>
+            <input type="hidden" name="price" value=';
+echo price;
+echo '>
             <input type="button" name="calculate" Value="calculate price" onClick="readText(this.form)">
             </form>
             <div class="grid-item-2">
@@ -49,4 +55,5 @@
         </div>
     </body>
 </html>
-
+';
+?>

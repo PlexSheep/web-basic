@@ -1,4 +1,7 @@
 <!doctype html>
+<?php
+echo
+'
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -26,11 +29,11 @@
             </div>
             <div class="grid-item-2-4">
                 <nav>
-                    <div><a href="art1.html">cursed article</a></div>
-                    <div><a href="art1.html">cursed article</a></div>
-                    <div><a href="art1.html">cursed article</a></div>
-                    <div><a href="art1.html">cursed article</a></div>
-                    <div><a href="buy.html">buy awesome stuff!</a></div>
+                    <div><a href="art1.php">cursed article</a></div>
+                    <div><a href="art1.php">cursed article</a></div>
+                    <div><a href="art1.php">cursed article</a></div>
+                    <div><a href="buy.php">buy awesome stuff!</a></div>
+                    <div><a href="phpinfo.php">phpinfo</a></div>
                 </nav>
             </div>
             <div class="grid-item-3">
@@ -58,4 +61,5 @@
         </script>
     </body>
 </html>
-
+';
+?>
